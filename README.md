@@ -1,0 +1,11 @@
+# scrollViewExamp
+使用autolayout来设置scrollview的content大小的示例
+
+当你使用scroll view的时候，你需要确定scroll view的大小和位置，同时需要设置scroll view的content area的大小。而这些设定都可以通过Autolayout来完成。确定scroll view的大小和位置很好理解，就跟其他的view没什么分别，但是用AutoLayout来确定content size可能很多人并不知道怎么设置。通常我们都是手动计算content size然后在赋值给scroll view的contentSize属性。但是其实不必这么麻烦。如果scroll view的content添加了与scroll view的top,bottom,leading and trailing的约束，那么系统会自动计算content size。注意必须有到scroll view的top,bottom,leading and trailing的约束，缺一不可。
+为了支持自动计算content size，系统会根据约束添加的位置的不同，来解释约束。
+任何scroll view和固定在scroll view的frame上的scroll view之外的对象之间的约束，和其他view一样。
+对于scroll view和它的content之间的约束来说，约束不同的属性有不同的结果。
+1、	scroll view的edges or margins与content之间的约束，绑定的是scroll view的content area。
+2、	与width，height，center之间的约束，绑定的是scroll view的frame。
+你可以在scroll view的content和scroll view之外的对象之间添加约束，来给这个content一个固定的位置，这就像这个content浮在scroll view之上。
+
